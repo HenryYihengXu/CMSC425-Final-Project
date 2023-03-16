@@ -4,41 +4,42 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    // Start is called before the first frame update
     float moveSpeed = 6;
-    float turnSpeed = 90;
-
+    float turnSpeed = 90 / 300f;
+    Vector3 mousePosition;
     
     void Start()
     {
-        transform.forward = Camera.main.transform.forward;
+        mousePosition = Input.mousePosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        float mouseDistance = Input.mousePosition.x - mousePosition.x;
+        mousePosition = Input.mousePosition;
+
+        transform.localRotation = Quaternion.AngleAxis(turnSpeed * mouseDistance, Vector3.up) * transform.localRotation;
+
         float distance = moveSpeed * Time.deltaTime;
-        float degree = turnSpeed * Time.deltaTime;
-        if (Input.GetKey("a"))
-        {
-            transform.forward = Quaternion.AngleAxis(-degree, Vector3.up) * transform.forward;
-            Debug.Log("a pressed");
-        }
 
-        if (Input.GetKey("d"))
-        {
-            transform.forward = Quaternion.AngleAxis(degree, Vector3.up) * transform.forward;
-            Debug.Log("a pressed");
-        }
-
-        if (Input.GetKey("up"))
+        if (Input.GetKey("w"))
         {
             transform.position = transform.position + distance * transform.forward;
         }
 
-        if (Input.GetKey("down"))
+        if (Input.GetKey("s"))
         {
             transform.position = transform.position - distance * transform.forward;
+        }
+
+        if (Input.GetKey("a"))
+        {
+            transform.position = transform.position + Quaternion.AngleAxis(-90, Vector3.up) * transform.forward * distance;
+        }
+
+        if (Input.GetKey("d"))
+        {
+            transform.position = transform.position + Quaternion.AngleAxis(90, Vector3.up) * transform.forward * distance;
         }
     }
 }
