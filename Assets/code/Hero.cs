@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class Hero : MonoBehaviour
 {
     float moveSpeed = 6;
     // float turnSpeed = 90 / 300f;
     float turnSpeed = 90f;
     public bool hasSprint = false;
+    public Dictionary<string, int> items = new Dictionary<string, int>();
     Vector3 mousePosition;
     
     void Start()
@@ -33,7 +34,7 @@ public class Move : MonoBehaviour
         // transform.localRotation = Quaternion.AngleAxis(turnSpeed * mouseDistance, Vector3.up) * transform.localRotation;
 
         /* move */
-        if (hasSprint && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) {
+        if (items.ContainsKey("Sprint") && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) {
             moveSpeed = 12;
         }
 

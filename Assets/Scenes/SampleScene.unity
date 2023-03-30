@@ -248,6 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f186228647c4f9e886e81091027d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: Sprint
+  itemLevel: 1
 --- !u!1001 &414452765
 PrefabInstance:
   m_ObjectHideFlags: 0
