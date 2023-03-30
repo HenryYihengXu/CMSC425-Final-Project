@@ -5,7 +5,8 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     float moveSpeed = 6;
-    float turnSpeed = 90 / 300f;
+    // float turnSpeed = 90 / 300f;
+    float turnSpeed = 90f;
     public bool hasSprint = false;
     Vector3 mousePosition;
     
@@ -16,12 +17,23 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        float mouseDistance = Input.mousePosition.x - mousePosition.x;
-        mousePosition = Input.mousePosition;
+        /* rotation */
+        float degree = turnSpeed * Time.deltaTime;
+        if (Input.GetKey("left"))
+        {
+            transform.forward = Quaternion.AngleAxis(-degree, Vector3.up) * transform.forward;
+        }
+        if (Input.GetKey("right"))
+        {
+            transform.forward = Quaternion.AngleAxis(degree, Vector3.up) * transform.forward;
+        }
 
-        transform.localRotation = Quaternion.AngleAxis(turnSpeed * mouseDistance, Vector3.up) * transform.localRotation;
+        // float mouseDistance = Input.mousePosition.x - mousePosition.x;
+        // mousePosition = Input.mousePosition;
+        // transform.localRotation = Quaternion.AngleAxis(turnSpeed * mouseDistance, Vector3.up) * transform.localRotation;
 
-        if (hasSprint && Input.GetKey(KeyCode.LeftShift)) {
+        /* move */
+        if (hasSprint && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) {
             moveSpeed = 12;
         }
 
