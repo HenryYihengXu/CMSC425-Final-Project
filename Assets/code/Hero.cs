@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    float moveSpeed = 6;
-    // float turnSpeed = 90 / 300f;
-    float turnSpeed = 90f;
-    public bool hasSprint = false;
+    float moveSpeed = 6f;
+    float turnSpeed = 3f;
     public Dictionary<string, int> items = new Dictionary<string, int>();
     Vector3 mousePosition;
     
@@ -19,22 +17,10 @@ public class Hero : MonoBehaviour
     void Update()
     {
         /* rotation */
-        float degree = turnSpeed * Time.deltaTime;
-        if (Input.GetKey("left"))
-        {
-            transform.forward = Quaternion.AngleAxis(-degree, Vector3.up) * transform.forward;
-        }
-        if (Input.GetKey("right"))
-        {
-            transform.forward = Quaternion.AngleAxis(degree, Vector3.up) * transform.forward;
-        }
-
-        // float mouseDistance = Input.mousePosition.x - mousePosition.x;
-        // mousePosition = Input.mousePosition;
-        // transform.localRotation = Quaternion.AngleAxis(turnSpeed * mouseDistance, Vector3.up) * transform.localRotation;
+        transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
 
         /* move */
-        if (items.ContainsKey("Sprint") && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) {
+        if (items.ContainsKey("Sprint") && Input.GetKey(KeyCode.Mouse1)) {
             moveSpeed = 12;
         }
 

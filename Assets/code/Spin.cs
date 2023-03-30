@@ -10,6 +10,4 @@ public class Spin : MonoBehaviour
     {
         transform.Rotate(0, 0, spinSpeed * Time.deltaTime);
     }
-
-
 }
