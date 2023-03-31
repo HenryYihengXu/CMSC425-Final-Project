@@ -37,9 +37,10 @@ public class EnemyShooter : MonoBehaviour
         }
     }
 
-    void Shoot() {
+    void Shoot()
+    {
         // ToDo: Play Sound Effect
-        print("shoot");
+        print("shoot"); // Once we have sound effect we don't need this line.
         if (!hero.gameObject.GetComponent<Hero>().isCovered) {
             hero.gameObject.GetComponent<Hero>().isDead = true; 
         }

@@ -14,8 +14,16 @@ public class Hero : MonoBehaviour
 
     public TextMeshProUGUI screen;
 
-    void Start() {
+    float startTime;
+
+    void Start()
+    {
         // ToDo: add game BGM. Not sure if we should add it here.
+        startTime = Time.time;
+        screen.text = "Press AWSD to move around\nUse mouse to turn around\nPress right mouse key to sprint (if you take sprint item)";
+        screen.fontSize = 50;
+        StartCoroutine(TurnOffInstructions());
+        
     }
 
     void Update()
@@ -57,5 +65,17 @@ public class Hero : MonoBehaviour
         }
 
         moveSpeed = 6;
+    }
+
+    // not sure if we should put it inside Hero
+    IEnumerator TurnOffInstructions()
+    {
+        while (Time.time - startTime <= 4) {
+            print(1);
+            yield return null;
+        } 
+        print(2);
+        screen.text = "";
+        screen.fontSize = 200;
     }
 }
