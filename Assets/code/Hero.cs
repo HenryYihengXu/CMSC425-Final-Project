@@ -1,21 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Hero : MonoBehaviour
 {
     float moveSpeed = 6f;
     float turnSpeed = 3f;
+
     public Dictionary<string, int> items = new Dictionary<string, int>();
-    Vector3 mousePosition;
-    
-    void Start()
-    {
-        mousePosition = Input.mousePosition;
+    public bool isCovered = false;
+    public bool isDead = false;
+
+    public TextMeshProUGUI screen;
+
+    void Start() {
+        // ToDo: add game BGM. Not sure if we should add it here.
     }
 
     void Update()
     {
+        // life check
+        if (isDead) {
+            screen.text = "Game Over"; // can give more lifes
+        }
+
         /* rotation */
         transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
 
@@ -26,6 +35,7 @@ public class Hero : MonoBehaviour
 
         float distance = moveSpeed * Time.deltaTime;
 
+        // ToDo: add running sound effect when a w s d is pressed.
         if (Input.GetKey("w"))
         {
             transform.position = transform.position + distance * transform.forward;
