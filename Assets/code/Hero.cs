@@ -71,10 +71,8 @@ public class Hero : MonoBehaviour
     IEnumerator TurnOffInstructions()
     {
         while (Time.time - startTime <= 4) {
-            print(1);
             yield return null;
         } 
-        print(2);
         screen.text = "";
         screen.fontSize = 200;
     }
