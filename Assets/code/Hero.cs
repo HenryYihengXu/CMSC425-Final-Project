@@ -35,6 +35,7 @@ public class Hero : MonoBehaviour
 
         /* rotation */
         transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
+        Camera.main.transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse Y"), Vector3.left) * Camera.main.transform.localRotation;
 
         /* move */
         if (items.ContainsKey("Sprint") && Input.GetKey(KeyCode.Mouse1)) {
