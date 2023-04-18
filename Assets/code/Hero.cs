@@ -20,7 +20,7 @@ public class Hero : MonoBehaviour
     {
         // ToDo: add game BGM. Not sure if we should add it here.
         startTime = Time.time;
-        screen.text = "Press AWSD to move around\nUse mouse to turn around\nPress right mouse key to sprint (if you take sprint item)";
+        screen.text = "Press AWSD to move around\nPress left mouse key and move mouse to turn around\nPress right mouse key to sprint (if you take sprint item)";
         screen.fontSize = 50;
         StartCoroutine(TurnOffInstructions());
         
