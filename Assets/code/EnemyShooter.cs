@@ -14,24 +14,16 @@ using UnityEngine;
 public class EnemyShooter : MonoBehaviour
 {
     public Transform hero;
-    bool isHeroInSight = false;
-    float startTime = 0;
+    public float startTime;
+
+    void Start()
+    {
+        gameObject.GetComponent<EnemyShooter>().enabled = false;
+    }
 
     void Update()
     {
-        float diffX = hero.position[0] - transform.position[0];
-        float diffZ = hero.position[2] - transform.position[2];
-        if (diffX <= 50 && diffX >= -50 && diffZ <= 25 && diffZ >= -25) {
-            // ToDo: Turn(); // Once the robot model is added, turn the shooter to face the hero
-            if (!isHeroInSight) {
-                startTime = Time.time;
-                isHeroInSight = true;
-            }
-        } else {
-            isHeroInSight = false;
-        }
-
-        if (isHeroInSight && Time.time - startTime >= 1) {
+        if (Time.time - startTime >= 1) {
             Shoot();
             startTime = Time.time;
         }
