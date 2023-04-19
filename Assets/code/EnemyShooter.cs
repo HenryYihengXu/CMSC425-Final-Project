@@ -21,7 +21,7 @@ public class EnemyShooter : MonoBehaviour
     {
         float diffX = hero.position[0] - transform.position[0];
         float diffZ = hero.position[2] - transform.position[2];
-        if (diffX <= 30 && diffX >= -30 && diffZ <= 25 && diffZ >= -25) {
+        if (diffX <= 50 && diffX >= -50 && diffZ <= 25 && diffZ >= -25) {
             // ToDo: Turn(); // Once the robot model is added, turn the shooter to face the hero
             if (!isHeroInSight) {
                 startTime = Time.time;
