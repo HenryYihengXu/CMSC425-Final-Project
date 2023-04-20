@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class MultiJumpPrevention : MonoBehaviour
 {
-    public GameObject heroGameObject;
-    Hero hero;
-
-    void Start()
-    {
-        hero = heroGameObject.GetComponent<Hero>();
-    }
-
+    public Hero hero;
+    
     void OnTriggerStay(Collider other)
     {
         hero.isGrounded = true;

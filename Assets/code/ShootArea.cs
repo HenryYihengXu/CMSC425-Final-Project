@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ShootArea : MonoBehaviour
 {
-    public GameObject shooter;
+    public EnemyShooter shooter;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Hero") {
-            shooter.GetComponent<EnemyShooter>().enabled = true;
-            shooter.GetComponent<EnemyShooter>().startTime = Time.time;
+            shooter.enabled = true;
+            shooter.startTime = Time.time;
         }
     }
     
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name == "Hero") {
-            shooter.GetComponent<EnemyShooter>().enabled = false;
+            shooter.enabled = false;
         }
     }
 }

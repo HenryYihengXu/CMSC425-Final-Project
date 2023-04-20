@@ -13,16 +13,14 @@ using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
-    public GameObject heroGameObject;
+    public Hero hero;
     public float startTime;
     AudioSource shootingSound;
-    Hero hero;
 
     void Start()
     {
         gameObject.GetComponent<EnemyShooter>().enabled = false;
         shootingSound = GetComponent<AudioSource>();
-        hero = heroGameObject.GetComponent<Hero>();
     }
 
     void Update()
