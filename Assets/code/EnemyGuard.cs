@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class EnemyGuard : MonoBehaviour
 {
-    public GameObject heroGameObject;
-    float moveSpeed = 6f;
+    public Transform heroTransform;
+    public float moveSpeed = 4f;
 
     void Start()
     {
-        gameObject.GetComponent<EnemyGuard>().enabled = false;
+        // gameObject.GetComponent<EnemyGuard>().enabled = false;
     }
 
     void Update()
     {
+        /* rotation */
+        transform.forward = heroTransform.position - transform.position;
         
+        /* move */
+        transform.position = transform.position + moveSpeed * Time.deltaTime * transform.forward;
     }
 }

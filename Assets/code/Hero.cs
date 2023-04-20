@@ -5,8 +5,8 @@ using TMPro;
 
 public class Hero : MonoBehaviour
 {
-    float moveSpeed = 6f;
-    float turnSpeed = 3f;
+    public float moveSpeed = 6f;
+    public float turnSpeed = 3f;
 
     public Dictionary<string, int> items = new Dictionary<string, int>();
     public bool isCovered = false;
@@ -79,7 +79,7 @@ public class Hero : MonoBehaviour
             transform.position = transform.position + Quaternion.AngleAxis(90, Vector3.up) * transform.forward * distance;
         }
 
-        // jump
+        /* jump */
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         }
