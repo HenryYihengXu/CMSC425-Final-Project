@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MultiJumpPrevention : MonoBehaviour
 {
-    public GameObject HeroGameObject;
+    public GameObject heroGameObject;
     Hero hero;
 
     void Start()
     {
-        hero = HeroGameObject.GetComponent<Hero>();
+        hero = heroGameObject.GetComponent<Hero>();
     }
 
     void OnTriggerStay(Collider other)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyGuard : MonoBehaviour
 {
-    public GameObject hero;
+    public GameObject heroGameObject;
     float moveSpeed = 6f;
 
     void Start()

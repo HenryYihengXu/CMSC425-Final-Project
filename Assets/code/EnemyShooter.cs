@@ -8,12 +8,12 @@ using UnityEngine;
     Currently this script is added to the wall. Once added that, we should put the script to the robot.
     
     Besides, add red boarders on the ground to tell player in this region the hero will be shot.
-    The region is a 60 x 25 rectangle next to the wall.
+    The region is a 100 x 25 rectangle next to the wall.
 */
 
 public class EnemyShooter : MonoBehaviour
 {
-    public GameObject HeroGameObject;
+    public GameObject heroGameObject;
     public float startTime;
     AudioSource shootingSound;
     Hero hero;
@@ -22,7 +22,7 @@ public class EnemyShooter : MonoBehaviour
     {
         gameObject.GetComponent<EnemyShooter>().enabled = false;
         shootingSound = GetComponent<AudioSource>();
-        hero = HeroGameObject.GetComponent<Hero>();
+        hero = heroGameObject.GetComponent<Hero>();
     }
 
     void Update()
@@ -35,8 +35,7 @@ public class EnemyShooter : MonoBehaviour
 
     void Shoot()
     {
-        // ToDo: Play Sound Effect
-        //print("shoot"); // Once we have sound effect we don't need this line.
+        //print("shoot");
         shootingSound.Play();
         
         if (!hero.isCovered) {
