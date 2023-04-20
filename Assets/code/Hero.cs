@@ -45,15 +45,17 @@ public class Hero : MonoBehaviour
     void Update()
     {
         // life check
-        if (isDead) {
+        if (isDead)
+        {
+            // I believe this should go to user interface system once its done
             screen.text = "Game Over"; // can give more lifes
         }
 
+        /* rotation */
         if (Input.GetKey(KeyCode.Mouse0))
         {
-        /* rotation */
-        transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
-        Camera.main.transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse Y"), Vector3.left) * Camera.main.transform.localRotation;
+            transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
+            Camera.main.transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse Y"), Vector3.left) * Camera.main.transform.localRotation;
         }
 
         /* move */
@@ -93,7 +95,7 @@ public class Hero : MonoBehaviour
         moveSpeed = 6;
     }
 
-    // not sure if we should put it inside Hero
+    // I believe this should go to user interface system once its done
     IEnumerator TurnOffInstructions()
     {
         while (Time.time - startTime <= 4) {
