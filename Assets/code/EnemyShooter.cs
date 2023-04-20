@@ -15,10 +15,12 @@ public class EnemyShooter : MonoBehaviour
 {
     public Transform hero;
     public float startTime;
+    AudioSource shootingSound;
 
     void Start()
     {
         gameObject.GetComponent<EnemyShooter>().enabled = false;
+        shootingSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -32,7 +34,9 @@ public class EnemyShooter : MonoBehaviour
     void Shoot()
     {
         // ToDo: Play Sound Effect
-        print("shoot"); // Once we have sound effect we don't need this line.
+        //print("shoot"); // Once we have sound effect we don't need this line.
+        shootingSound.Play();
+        
         if (!hero.gameObject.GetComponent<Hero>().isCovered) {
             hero.gameObject.GetComponent<Hero>().isDead = true; 
         }
