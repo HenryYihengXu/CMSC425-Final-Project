@@ -16,6 +16,14 @@ public class Hero : MonoBehaviour
 
     float startTime;
 
+    // for jump
+    public Vector3 jump;
+    public float jumpForce = 2.0f;
+    public bool isGrounded; // so you cant double jump
+    Rigidbody rb;
+
+
+
     void Start()
     {
         // ToDo: add game BGM. Not sure if we should add it here.
@@ -23,7 +31,15 @@ public class Hero : MonoBehaviour
         screen.text = "Press AWSD to move around\nPress left mouse key and move mouse to turn around\nPress right mouse key to sprint (if you take sprint item)";
         screen.fontSize = 50;
         StartCoroutine(TurnOffInstructions());
+
+        rb = GetComponent<Rigidbody>();
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
         
+    }
+
+    /// for jump
+    void OnCollisionStay(){
+        isGrounded = true;
     }
 
     void Update()
@@ -66,6 +82,12 @@ public class Hero : MonoBehaviour
         if (Input.GetKey("d"))
         {
             transform.position = transform.position + Quaternion.AngleAxis(90, Vector3.up) * transform.forward * distance;
+        }
+
+        // jump
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
         }
 
         moveSpeed = 6;
