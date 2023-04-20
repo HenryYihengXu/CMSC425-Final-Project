@@ -18,11 +18,9 @@ public class Hero : MonoBehaviour
 
     // for jump
     public Vector3 jump;
-    public float jumpForce = 2.0f;
+    public float jumpForce = 2.5f;
     public bool isGrounded; // so you cant double jump
     Rigidbody rb;
-
-
 
     void Start()
     {
@@ -87,7 +85,7 @@ public class Hero : MonoBehaviour
         }
 
         // jump
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
+        if(Input.GetKeyDown(KeyCode.Space) && transform.position.y == 1.5){
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
