@@ -13,14 +13,16 @@ using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
-    public Transform hero;
+    public GameObject HeroGameObject;
     public float startTime;
     AudioSource shootingSound;
+    Hero hero;
 
     void Start()
     {
         gameObject.GetComponent<EnemyShooter>().enabled = false;
         shootingSound = GetComponent<AudioSource>();
+        hero = HeroGameObject.GetComponent<Hero>();
     }
 
     void Update()
@@ -37,8 +39,8 @@ public class EnemyShooter : MonoBehaviour
         //print("shoot"); // Once we have sound effect we don't need this line.
         shootingSound.Play();
         
-        if (!hero.gameObject.GetComponent<Hero>().isCovered) {
-            hero.gameObject.GetComponent<Hero>().isDead = true; 
+        if (!hero.isCovered) {
+            hero.isDead = true; 
         }
     }
 }

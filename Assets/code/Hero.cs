@@ -35,11 +35,6 @@ public class Hero : MonoBehaviour
         
     }
 
-    /// for jump
-    void OnCollisionStay(){
-        isGrounded = true;
-    }
-
     void Update()
     {
         // life check
@@ -85,9 +80,8 @@ public class Hero : MonoBehaviour
         }
 
         // jump
-        if(Input.GetKeyDown(KeyCode.Space) && transform.position.y == 1.5){
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
         }
 
         moveSpeed = 6;
