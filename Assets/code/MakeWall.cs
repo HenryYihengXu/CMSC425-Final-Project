@@ -26,7 +26,6 @@ public class MakeWall : MonoBehaviour
     public GameObject door;
     public GameObject wallCube;
     public GameObject windowCube;
-    public GameObject doorCube;
 
     void Start()
     {
@@ -46,13 +45,6 @@ public class MakeWall : MonoBehaviour
             window.transform.parent = wall.transform;
         }
 
-        if (hasDoor)
-        {   
-            door = Instantiate<GameObject>(window, wallStart, Quaternion.identity);
-            door.name = "Door";
-            door.transform.parent = wall.transform;
-        }
-
         for (int row = 0; row < wallRows; ++row)
         {
             Vector3 place = wallStart;
@@ -69,11 +61,15 @@ public class MakeWall : MonoBehaviour
             {
                 place.y = wallStart.y + col;
 
-                if (hasDoor && row >= doorStartRow && row <= doorEndRow && col >= doorStartCol && col <= doorEndCol)
+                if (hasDoor && row == doorStartRow && col == doorStartCol)
                 {
-                    doorCube = Instantiate<GameObject>(doorCube, place, Quaternion.identity);
-                    doorCube.name = "DoorCube";
-                    doorCube.transform.parent = door.transform;
+                    door = Instantiate<GameObject>(door, place, Quaternion.identity);
+                    door.name = "Door";
+                    door.transform.parent = wall.transform;
+                }
+                else if (hasDoor && row >= doorStartRow && row <= doorEndRow && col >= doorStartCol && col <= doorEndCol)
+                {
+                    continue;
                 }
                 else if (hasDoor && row >= doorStartRow - 2 && row < doorStartRow + 4)
                 {
@@ -95,10 +91,11 @@ public class MakeWall : MonoBehaviour
                 }
             }
         }
-
-        if (hasDoor)
-        {   
-            door.AddComponent<Door>();
-        }
+        // wall.AddComponent<BoxCollider>();
+        // BoxCollider wallCollider = wall.GetComponent<BoxCollider>();
+        // if (isAlongX)
+        // {
+        //     wallCollider.center = new Vector3();
+        // }
     }
 }

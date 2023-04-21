@@ -8,11 +8,17 @@ public class MultiJumpPrevention : MonoBehaviour
     
     void OnTriggerStay(Collider other)
     {
-        hero.isGrounded = true;
+        if (!other.isTrigger)
+        {
+            hero.isGrounded = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        hero.isGrounded = false;
+        if (!other.isTrigger)
+        {
+            hero.isGrounded = false;
+        }
     }
 }
