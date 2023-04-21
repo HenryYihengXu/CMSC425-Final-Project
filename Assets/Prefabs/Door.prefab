@@ -140,6 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8103292036472243469}
   - component: {fileID: 2384351600682323472}
+  - component: {fileID: 2003845136970243025}
   m_Layer: 0
   m_Name: DoorTrigger
   m_TagString: Untagged
@@ -175,6 +176,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 3, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2003845136970243025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327543927800191294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4035cbd249fe443caa30f78b3cd0fe8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: GuardInCafe
 --- !u!1 &6357950741074046614
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +198,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2430302409493771409}
+  - component: {fileID: 6529265212268428626}
+  - component: {fileID: 8874847345978495822}
   m_Layer: 0
   m_Name: DoorBodyEmpty
   m_TagString: Untagged
@@ -207,3 +223,32 @@ Transform:
   m_Father: {fileID: 3636150999891574627}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6529265212268428626
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357950741074046614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1, y: 3.1, z: 0.6}
+  m_Center: {x: 1, y: 1.5, z: -0.25}
+--- !u!114 &8874847345978495822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357950741074046614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e926a1e24b7aa46c9b407e36769f4f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 0}
+  angleOpened: -110
+  angleClosed: 0
+  flapTime: 1.5

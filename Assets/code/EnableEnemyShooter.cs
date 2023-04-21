@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootArea : MonoBehaviour
+public class EnableEnemyShooter : MonoBehaviour
 {
     public EnemyShooter shooter;
 
