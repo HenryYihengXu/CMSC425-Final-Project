@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class MakeWall : MonoBehaviour
 {
-    public bool isAlongX = true;
-    
     public Vector3 wallStart;
     public int wallRows;
     public int wallCols;
@@ -44,14 +42,7 @@ public class MakeWall : MonoBehaviour
         for (int row = 0; row < wallRows; ++row)
         {
             Vector3 place = wallStart;
-            if (isAlongX)
-            {
-                place.x = wallStart.x + row;
-            }
-            else
-            {
-                place.z = wallStart.z + row;
-            }
+            place.x = wallStart.x + row;
 
             for (int col = 0; col < wallCols; ++col)
             {
@@ -60,14 +51,7 @@ public class MakeWall : MonoBehaviour
                 if (hasDoor && row == doorStartRow && col == doorStartCol)
                 {
                     
-                    if (isAlongX)
-                    {
-                        door = Instantiate<GameObject>(door, place, Quaternion.identity, wall.transform);
-                    }
-                    else
-                    {
-                        door = Instantiate<GameObject>(door, place, Quaternion.Euler(0,-90,0), wall.transform);
-                    }
+                    door = Instantiate<GameObject>(door, place, Quaternion.identity, wall.transform);
                     door.name = "Door";
                 }
                 else if (hasDoor && row >= doorStartRow && row <= doorEndRow && col >= doorStartCol && col <= doorEndCol)

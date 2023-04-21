@@ -9,7 +9,8 @@ public class EnemyGuard : MonoBehaviour
 
     void Start()
     {
-        // gameObject.GetComponent<EnemyGuard>().enabled = false;
+        gameObject.GetComponent<EnemyGuard>().enabled = false;
+        gameObject.tag = "GuardInCafe";
     }
 
     void Update()
