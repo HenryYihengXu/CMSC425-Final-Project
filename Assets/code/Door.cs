@@ -27,7 +27,6 @@ public class Door : MonoBehaviour
 
     private void OnMouseDown()
     {
-        print("mouse down on door");
         if (Vector3.Distance(transform.position, hero.position) <= 10)
         {
             StartCoroutine(OpenDoor());

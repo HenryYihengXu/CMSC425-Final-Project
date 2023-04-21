@@ -21,4 +21,10 @@ public class EnemyGuard : MonoBehaviour
         /* move */
         transform.position = transform.position + moveSpeed * Time.deltaTime * transform.forward;
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.name == "Hero") {
+            other.gameObject.GetComponent<Hero>().isDead = true;
+        }
+    }
 }
