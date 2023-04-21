@@ -851,19 +851,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24093831e0f047dcb923305c74be51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlongX: 1
+  isAlongX: 0
   wallStart: {x: 10, y: 1, z: 0}
-  wallRows: 20
+  wallRows: 50
   wallCols: 10
   hasWindow: 1
-  windowStartRow: 2
+  isHoleNotWindow: 0
+  windowStartRow: 4
   windowStartCol: 2
-  windowEndRow: 18
-  windowEndCol: 8
+  windowEndRow: 46
+  windowEndCol: 6
   hasDoor: 1
-  doorStartRow: 9
+  doorStartRow: 24
   doorStartCol: 0
-  doorEndRow: 10
+  doorEndRow: 25
   doorEndCol: 2
   wall: {fileID: 3405210060370981671, guid: 97f50c160095a434c90f967038209439, type: 3}
   wallBody: {fileID: 3405210060370981671, guid: 97f50c160095a434c90f967038209439, type: 3}
