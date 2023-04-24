@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour
 {
@@ -55,8 +56,15 @@ public class Hero : MonoBehaviour
         // life check
         if (isDead)
         {
+            moveSpeed = 0;
+            jumpForce = 0;
+            
             // I believe this should go to user interface system once its done
-            screen.text = "Game Over"; // can give more lifes
+
+            screen.text = "Game Over. \n Press x to restart"; // can give more lifes
+            if (Input.GetKey("x")) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
 
         /* rotation */
