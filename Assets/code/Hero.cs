@@ -76,7 +76,7 @@ public class Hero : MonoBehaviour
 
         /* move */
         if (items.ContainsKey("Sprint") && Input.GetKey(KeyCode.Mouse1)) {
-            moveSpeed = 12;
+            moveSpeed *= 2; //changed from 12 to *2, bc it needs to stop at game over
         }
 
         float distance = moveSpeed * Time.deltaTime;
