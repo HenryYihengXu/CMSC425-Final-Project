@@ -22,8 +22,12 @@ public class Hero : MonoBehaviour
     public bool isGrounded; // so you cant double jump
     Rigidbody rb;
 
-    //running sound effect
+    //sound effect
+    public AudioSource[] sounds;
     public AudioSource runningSrc;
+    public AudioSource jumpSrc;
+    public AudioSource landingSrc;
+
     bool isSoundPlaying = false;
 
     void Start()
@@ -37,7 +41,12 @@ public class Hero : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
 
-        runningSrc = GetComponent<AudioSource>(); // from https://freesound.org/people/Disagree/sounds/433725/
+        // sound effects
+        sounds = GetComponents<AudioSource>();
+
+        runningSrc = sounds[0]; // from https://freesound.org/people/Disagree/sounds/433725/
+        jumpSrc = sounds[1]; // from https://pixabay.com/sound-effects/fast-simple-chop-5-6270/
+        landingSrc = sounds[2]; // from https://pixabay.com/sound-effects/human-impact-on-ground-6982/
         
     }
 
@@ -114,7 +123,15 @@ public class Hero : MonoBehaviour
         /* jump */
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            jumpSrc.Play();
         }
+
+        if (!isGrounded) {
+            landingSrc.Play();
+        }
+
+        
+
 
         moveSpeed = 6;
     }
