@@ -22,6 +22,10 @@ public class Hero : MonoBehaviour
     public bool isGrounded; // so you cant double jump
     Rigidbody rb;
 
+    //running sound effect
+    public AudioSource runningSrc;
+    bool isSoundPlaying = false;
+
     void Start()
     {
         // ToDo: add game BGM. Not sure if we should add it here.
@@ -32,6 +36,8 @@ public class Hero : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
+
+        runningSrc = GetComponent<AudioSource>(); // from https://freesound.org/people/Disagree/sounds/433725/
         
     }
 
@@ -62,21 +68,47 @@ public class Hero : MonoBehaviour
         if (Input.GetKey("w"))
         {
             transform.position = transform.position + distance * transform.forward;
+            if (!isSoundPlaying && isGrounded) {
+                runningSrc.Play();
+                isSoundPlaying = true;
+            }
         }
 
         if (Input.GetKey("s"))
         {
             transform.position = transform.position - distance * transform.forward;
+            if (!isSoundPlaying && isGrounded) {
+                runningSrc.Play();
+                isSoundPlaying = true;
+            }
+
         }
 
         if (Input.GetKey("a"))
         {
             transform.position = transform.position + Quaternion.AngleAxis(-90, Vector3.up) * transform.forward * distance;
+            if (!isSoundPlaying && isGrounded) {
+                runningSrc.Play();
+                isSoundPlaying = true;
+            }
+
         }
 
         if (Input.GetKey("d"))
         {
             transform.position = transform.position + Quaternion.AngleAxis(90, Vector3.up) * transform.forward * distance;
+            if (!isSoundPlaying && isGrounded) {
+                runningSrc.Play();
+                isSoundPlaying = true;
+            }
+
+        }
+
+        //doesnt play sound if no keys are down
+        // prob a better way to do this??
+        if(!Input.GetKey("d") && !Input.GetKey("a") && !Input.GetKey("s") && !Input.GetKey("w") || !isGrounded){
+            runningSrc.Stop();
+            isSoundPlaying = false;
         }
 
         /* jump */
