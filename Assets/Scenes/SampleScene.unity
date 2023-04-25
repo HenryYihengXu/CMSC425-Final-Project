@@ -2420,7 +2420,6 @@ GameObject:
   - component: {fileID: 1873298768}
   - component: {fileID: 1873298769}
   - component: {fileID: 1873298770}
-  - component: {fileID: 1873298771}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -2836,18 +2835,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1873298771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873298759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b06dde1a877f0043a8e3f3a9f3e79f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2463119712601246206
 PrefabInstance:
   m_ObjectHideFlags: 0
