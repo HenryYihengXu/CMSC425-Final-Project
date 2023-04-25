@@ -33,7 +33,7 @@ public class EnemyShooter : MonoBehaviour
 
     void Shoot()
     {
-        //print("shoot");
+        // print("shoot");
         shootingSound.Play();
         
         if (!hero.isCovered) {
