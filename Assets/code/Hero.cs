@@ -31,6 +31,12 @@ public class Hero : MonoBehaviour
 
     bool isSoundPlaying = false;
 
+    // shooting, on hero. For now??
+    public Rigidbody bullet;
+    public float bulletSpeed = 10;
+
+
+
     void Start()
     {
         // ToDo: add game BGM. Not sure if we should add it here.
@@ -68,20 +74,26 @@ public class Hero : MonoBehaviour
         }
 
         /* rotation */
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
+        // if (Input.GetKey(KeyCode.Mouse0))
+        // {
             transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
             Camera.main.transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse Y"), Vector3.left) * Camera.main.transform.localRotation;
-        }
+        //}
 
         /* move */
         if (items.ContainsKey("Sprint") && Input.GetKey(KeyCode.Mouse1)) {
             moveSpeed *= 2; //changed from 12 to *2, bc it needs to stop at game over
         }
 
+        // shooting
+        if(Input.GetMouseButtonDown(0))
+        {
+            Rigidbody p = Instantiate(bullet, transform.position, transform.rotation);
+            p.velocity = transform.forward * bulletSpeed;
+        }
+
         float distance = moveSpeed * Time.deltaTime;
 
-        // ToDo: add running sound effect when a w s d is pressed.
         if (Input.GetKey("w"))
         {
             transform.position = transform.position + distance * transform.forward;
@@ -139,10 +151,10 @@ public class Hero : MonoBehaviour
         }
 
         
-
-
         moveSpeed = 6;
     }
+
+
 
     // I believe this should go to user interface system once its done
     IEnumerator TurnOffInstructions()
