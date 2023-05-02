@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -495,6 +495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
       propertyPath: heroTransform
       value: 
@@ -1381,7 +1385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810447454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19ca390caa12e4a7c97ba70769ea9f4c, type: 3}
   m_Name: 
@@ -1911,6 +1915,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
       propertyPath: heroTransform
       value: 
@@ -2789,6 +2797,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
       propertyPath: heroTransform
       value: 
       objectReference: {fileID: 1873298764}
@@ -2810,7 +2822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4717870320067921967, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4717870320067921967, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2990,6 +3002,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1993296528, guid: 7dd8881c13e6a44ca86089fa8e67bd9e, type: 3}
       propertyPath: heroTransform
       value: 
@@ -3173,7 +3189,7 @@ MonoBehaviour:
   jumpSrc: {fileID: 0}
   landingSrc: {fileID: 0}
   bullet: {fileID: 6991641678050336057, guid: 10afdaa83e27bc04a8bade6cbacb6165, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 15
 --- !u!54 &1873298766
 Rigidbody:
   m_ObjectHideFlags: 0

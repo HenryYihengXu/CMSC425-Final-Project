@@ -33,7 +33,7 @@ public class Hero : MonoBehaviour
 
     // shooting, on hero. For now??
     public Rigidbody bullet;
-    public float bulletSpeed = 10;
+    public float bulletSpeed = 15;
 
 
 
@@ -88,7 +88,7 @@ public class Hero : MonoBehaviour
         // shooting
         if(Input.GetMouseButtonDown(0))
         {
-            Rigidbody p = Instantiate(bullet, transform.position, transform.rotation);
+            Rigidbody p = Instantiate(bullet, transform.position + transform.forward, transform.rotation);
             p.velocity = transform.forward * bulletSpeed;
         }
 
