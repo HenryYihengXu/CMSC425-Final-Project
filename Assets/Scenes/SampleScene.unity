@@ -537,6 +537,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8912292936659746967, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
 --- !u!1 &276194606
@@ -2249,6 +2253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8912292936659746967, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
 --- !u!1 &1341069236
@@ -2941,6 +2949,14 @@ PrefabInstance:
     - target: {fileID: 2692879520323019865, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912292936659746967, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912292936659746967, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc74bec69d2d4b2bb1bd27a281149e1, type: 3}
