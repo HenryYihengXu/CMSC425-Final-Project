@@ -6,6 +6,7 @@ public class Switch : MonoBehaviour
 {
     public Transform hero;
     public EnableEnemyShooter shootArea;
+    public GameObject rollerShutterDoor;
 
     public float angleOn = -135f;
     public float angleOff = -45f;
@@ -33,10 +34,12 @@ public class Switch : MonoBehaviour
             if (isOff)
             {
                 shootArea.GetComponent<Collider>().enabled = false;
+                rollerShutterDoor.SetActive(true);
             }
             else
             {
                 shootArea.GetComponent<Collider>().enabled = true;
+                rollerShutterDoor.SetActive(false);
             }
             StartCoroutine(TurnOnOff());
         }
