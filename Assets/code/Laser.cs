@@ -28,4 +28,11 @@ public class Laser : MonoBehaviour
             isLaser1 = !isLaser1;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Hero") {
+            other.gameObject.GetComponent<Hero>().isDead = true;
+        }
+    }
 }
