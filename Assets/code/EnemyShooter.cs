@@ -15,17 +15,23 @@ public class EnemyShooter : MonoBehaviour
 {
     public Hero hero;
     public float startTime;
+    public Rigidbody bullet;
+    public float bulletSpeed = 15;
+
     AudioSource shootingSound;
 
     void Start()
     {
+        Vector3 heroPreviousPostion;
         gameObject.GetComponent<EnemyShooter>().enabled = false;
         shootingSound = GetComponent<AudioSource>();
+
     }
 
     void Update()
     {
-        if (Time.time - startTime >= 1) {
+        if (gameObject.GetComponent<EnemyShooter>().enabled && Time.time - startTime >= Random.Range(0.8f, 1.5f)) {
+            transform.forward = hero.transform.position - transform.position;
             Shoot();
             startTime = Time.time;
         }
@@ -33,11 +39,9 @@ public class EnemyShooter : MonoBehaviour
 
     void Shoot()
     {
-        // print("shoot");
         shootingSound.Play();
-        
-        if (!hero.isCovered) {
-            hero.isDead = true; 
-        }
+        Vector3 spawnPoint = transform.position;
+        Rigidbody p = Instantiate(bullet, spawnPoint + transform.forward, Quaternion.Euler(0, 0, 0), gameObject.GetComponent<EnemyShooter>().transform.parent);
+        p.velocity = transform.forward * bulletSpeed;
     }
 }

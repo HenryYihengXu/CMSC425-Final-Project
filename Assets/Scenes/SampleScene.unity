@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -813,6 +813,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 1873298765}
   startTime: 0
+  bullet: {fileID: 6991641678050336057, guid: 10afdaa83e27bc04a8bade6cbacb6165, type: 3}
+  bulletSpeed: 15
 --- !u!82 &340843550
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1007,6 +1009,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 1873298765}
   startTime: 0
+  bullet: {fileID: 0}
+  bulletSpeed: 15
 --- !u!1001 &536774040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1795,6 +1799,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 340843546}
+  shooters:
+  - {fileID: 340843546}
 --- !u!65 &820569651
 BoxCollider:
   m_ObjectHideFlags: 0

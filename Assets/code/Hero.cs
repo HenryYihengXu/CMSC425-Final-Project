@@ -160,6 +160,13 @@ public class Hero : MonoBehaviour
         moveSpeed = 6;
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.name == "Bullet(Clone)") {
+            isDead = true;
+        }
+    }
+
 
 
     // I believe this should go to user interface system once its done
