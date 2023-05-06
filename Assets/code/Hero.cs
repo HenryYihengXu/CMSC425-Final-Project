@@ -35,11 +35,12 @@ public class Hero : MonoBehaviour
     public Rigidbody bullet;
     public float bulletSpeed = 15;
 
+    public GameObject gunTop;
+
 
 
     void Start()
     {
-        // ToDo: add game BGM. Not sure if we should add it here.
         startTime = Time.time;
         screen.text = "Press AWSD to move around\nPress left mouse key and move mouse to turn around\nPress right mouse key to sprint (if you take sprint item)";
         screen.fontSize = 50;
@@ -55,6 +56,7 @@ public class Hero : MonoBehaviour
         jumpSrc = sounds[1]; // from https://pixabay.com/sound-effects/fast-simple-chop-5-6270/
         landingSrc = sounds[2]; // from https://pixabay.com/sound-effects/human-impact-on-ground-6982/
         
+        gunTop = GameObject.Find("gunTop");
     }
 
     void Update()
@@ -76,8 +78,8 @@ public class Hero : MonoBehaviour
         /* rotation */
         // if (Input.GetKey(KeyCode.Mouse0))
         // {
-            transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
-            Camera.main.transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse Y"), Vector3.left) * Camera.main.transform.localRotation;
+        transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse X"), Vector3.up) * transform.localRotation;
+        Camera.main.transform.localRotation = Quaternion.AngleAxis(turnSpeed * Input.GetAxis("Mouse Y"), Vector3.left) * Camera.main.transform.localRotation;
         //}
 
         /* move */
@@ -88,7 +90,11 @@ public class Hero : MonoBehaviour
         // shooting
         if(Input.GetMouseButtonDown(0))
         {
-            Rigidbody p = Instantiate(bullet, transform.position + transform.forward, transform.rotation);
+            // relative position of gun cylinder, spawn bullet out of that
+
+            Vector3 spawnPoint = gunTop.transform.position;
+
+            Rigidbody p = Instantiate(bullet, spawnPoint + transform.forward, gunTop.transform.rotation);
             p.velocity = transform.forward * bulletSpeed;
         }
 
