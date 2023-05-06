@@ -1986,7 +1986,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallWithWindowDoor2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9047944446718418188, guid: 89d14f2124050442badcf86ba172be12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 89d14f2124050442badcf86ba172be12, type: 3}
 --- !u!1 &963194225
 GameObject:
