@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 1873298765}
   startTime: 0
-  bullet: {fileID: 6991641678050336057, guid: 10afdaa83e27bc04a8bade6cbacb6165, type: 3}
+  enemyBullet: {fileID: 0}
   bulletSpeed: 15
 --- !u!82 &340843550
 AudioSource:
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 1873298765}
   startTime: 0
-  bullet: {fileID: 0}
+  enemyBullet: {fileID: 0}
   bulletSpeed: 15
 --- !u!1001 &536774040
 PrefabInstance:
@@ -1027,6 +1027,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5532602041773542309, guid: 5f9895ec55016c548906e06eb6bce88d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532602041773542309, guid: 5f9895ec55016c548906e06eb6bce88d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.32
       objectReference: {fileID: 0}
@@ -1036,7 +1040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5532602041773542309, guid: 5f9895ec55016c548906e06eb6bce88d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.52
+      value: 1.5200005
       objectReference: {fileID: 0}
     - target: {fileID: 5532602041773542309, guid: 5f9895ec55016c548906e06eb6bce88d, type: 3}
       propertyPath: m_LocalRotation.w
