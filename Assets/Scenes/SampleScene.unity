@@ -1841,6 +1841,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &706453709
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 69353632984280836, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: hero
+      value: 
+      objectReference: {fileID: 1873298764}
+    - target: {fileID: 2670024016039700271, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_Name
+      value: WallWithWindowDoor22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -37.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769281622769354717, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1297536393404254237, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 548c9519a47e04a6abe86b332dbd78c7, type: 3}
 --- !u!1 &789479961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,7 +2078,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810447454}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e24093831e0f047dcb923305c74be51c, type: 3}
   m_Name: 
@@ -2035,9 +2097,9 @@ MonoBehaviour:
   doorStartCol: 0
   doorEndRow: 8
   doorEndCol: 2
-  wall: {fileID: 3254851629849417282, guid: 6bc76c70fbd2d45c29fe87260ace14ef, type: 3}
-  wallBody: {fileID: 3254851629849417282, guid: 6bc76c70fbd2d45c29fe87260ace14ef, type: 3}
-  window: {fileID: 3254851629849417282, guid: 6bc76c70fbd2d45c29fe87260ace14ef, type: 3}
+  wall: {fileID: 0}
+  wallBody: {fileID: 0}
+  window: {fileID: 0}
   door: {fileID: 4524990734017694200, guid: 683ae4aa667be4438b8a6bd47d738a32, type: 3}
   wallCube: {fileID: 1291645053896960559, guid: 130aaf1de291549bf8fb69682f76ff2d, type: 3}
   windowCube: {fileID: 4127413500532178923, guid: 57972434857c6424e92507ba4e20fe4d, type: 3}
@@ -2643,6 +2705,10 @@ PrefabInstance:
     - target: {fileID: 7304856202883505757, guid: 89d14f2124050442badcf86ba172be12, type: 3}
       propertyPath: m_Name
       value: WallWithWindowDoor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304856202883505757, guid: 89d14f2124050442badcf86ba172be12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9047944446718418188, guid: 89d14f2124050442badcf86ba172be12, type: 3}
