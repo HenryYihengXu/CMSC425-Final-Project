@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+
+    public GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,7 @@ public class Bullet : MonoBehaviour
     // destory enemy and bullet
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.name == "EnemyGuard"){
+            explosion = Instantiate<GameObject>(explosion, transform.position, Quaternion.identity);
             Destroy(other.gameObject); // this destroys the enemy
         }
         if (other.gameObject.name != "Hero"){
