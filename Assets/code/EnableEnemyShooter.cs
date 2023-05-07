@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnableEnemyShooter : MonoBehaviour
 {
-    public EnemyShooter shooter;
     public List<EnemyShooter> shooters = new List<EnemyShooter>();
 
     private void OnTriggerEnter(Collider other)
